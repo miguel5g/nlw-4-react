@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { FiX } from 'react-icons/fi';
 
 import { challengesContext } from '../../contexts/ChallengesContext';
 
@@ -64,6 +65,7 @@ const Countdown: React.FC = () => {
             disabled
           >
             Ciclo encerrado
+            <img src="icons/check_circle.svg" />
           </button>
         ) : (
           <>
@@ -75,6 +77,7 @@ const Countdown: React.FC = () => {
                   onClick={resetCountdown}
                 >
                   Abandonar ciclo
+                  <FiX size="1.5rem" style={{ marginLeft: 12 }} />
                 </button>
               )
               : (
