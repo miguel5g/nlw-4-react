@@ -10,7 +10,7 @@ import ExperienceBar from '../components/ExperienceBar';
 import Profile from '../components/Profile';
 import ChallengeBox from '../components/ChallengeBox';
 
-import styles from '../styles/pages/index.module.css';
+import { Container } from '../styles/pages/Index';
 
 interface HomeProps {
   level: number;
@@ -25,7 +25,7 @@ const Home: React.FC<HomeProps> = (props) => {
       currentExperience={props.currentExperience}
       challengesCompleted={props.challengesCompleted}
     >
-      <div className={styles.container}>
+      <Container>
         <Head>
           <title>Início | gopep</title>
         </Head>
@@ -45,7 +45,7 @@ const Home: React.FC<HomeProps> = (props) => {
             </div>
           </section>
         </CountdownProvider>
-      </div>
+      </Container>
     </ChallengesProvider>
   );
 }

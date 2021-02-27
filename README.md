@@ -40,7 +40,7 @@ O moev.it é um app que une a técnica de Pomodoro com a realização de exercí
 
 Algumas coisas que quero implementar ou alterar para dar um up no projeto.
 
-- [ ] Migrar a estilização de module.css para Styled Components.
+- [X] Migrar a estilização de module.css para Styled Components.
 - [ ] Migrar página index para home.
 - [ ] Criar uma página de login com possibilidade de login por username ou github.
 - [ ] Adicionar responsividade.

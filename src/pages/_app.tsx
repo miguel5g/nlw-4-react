@@ -1,10 +1,16 @@
-import { ChallengesProvider } from '../contexts/ChallengesContext'
+import React from 'react';
+import { ThemeProvider } from 'styled-components';
 
-import '../styles/global.css'
+import { GlobalStyle } from '../styles/global';
+import dark from '../styles/themes/Dark';
+import light from '../styles/themes/Light';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Component {...pageProps} />
+    <ThemeProvider theme={light}>
+      <GlobalStyle />
+      <Component {...pageProps} />
+    </ThemeProvider>
   )
 }
 

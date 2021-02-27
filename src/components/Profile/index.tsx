@@ -2,13 +2,13 @@ import React, { useContext } from 'react';
 
 import { challengesContext } from '../../contexts/ChallengesContext';
 
-import styles from './styles.module.css';
+import { Container } from './styles';
 
 const Profile: React.FC = () => {
   const { level } = useContext(challengesContext);
 
   return (
-    <div className={styles.profileContainer}>
+    <Container>
       <img src="https://github.com/miguel5g.png" alt="Miguel Ângelo" />
       <div>
         <strong>Miguel Ângelo</strong>
@@ -17,7 +17,7 @@ const Profile: React.FC = () => {
           Level {level}
         </p>
       </div>
-    </div>
+    </Container>
   );
 }
 

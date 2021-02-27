@@ -3,7 +3,7 @@ import React, { useContext } from 'react';
 import { challengesContext } from '../../contexts/ChallengesContext';
 import { CountdownContext } from '../../contexts/CountdownContext';
 
-import styles from './styles.module.css';
+import { ChallengeActive, ChallengeFailedButton, ChallengeNotActive, ChallengeSucceededButton, Container } from './styles';
 
 const ChallengeBox: React.FC = () => {
   const { activeChallenge, resetChallenge, completeChallenge } = useContext(challengesContext);
@@ -18,12 +18,12 @@ const ChallengeBox: React.FC = () => {
     resetChallenge();
     resetCountdown();
   }
-  
+
   return (
-    <div className={styles.challengeBoxContainer}>
+    <Container>
       {activeChallenge
         ? (
-          <div className={styles.challengeActive}>
+          <ChallengeActive>
             <header>Ganhe {activeChallenge.amount} xp</header>
             <main>
               <img src={`icons/${activeChallenge.type}.svg`} alt="Challenge Icon" />
@@ -34,28 +34,26 @@ const ChallengeBox: React.FC = () => {
 
             </main>
             <footer>
-              <button
+              <ChallengeFailedButton
                 type="button"
-                className={styles.challengeFailedButton}
                 onClick={handleChallengeFailed}
-              >Falhei</button>
-              <button
+              >Falhei</ChallengeFailedButton>
+              <ChallengeSucceededButton
                 type="button"
-                className={styles.challengeSucceededButton}
                 onClick={handleChallengeSucceeded}
-              >Completei</button>
+              >Completei</ChallengeSucceededButton>
             </footer>
-          </div>
+          </ChallengeActive>
         ) : (
-          <div className={styles.challengeNotActive}>
+          <ChallengeNotActive>
             <strong>Finalize um ciclo para receber um desafio</strong>
             <p>
               <img src="icons/level-up.svg" alt="Level Up" />
               Avance de level completando desafios.
             </p>
-          </div>
+          </ChallengeNotActive>
         )}
-    </div >
+    </Container>
   );
 }
 

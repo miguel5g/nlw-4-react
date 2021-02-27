@@ -2,14 +2,14 @@ import React, { useContext } from 'react';
 
 import { challengesContext } from '../../contexts/ChallengesContext';
 
-import styles from './styles.module.css';
+import { Container, Overlay } from './styles';
 
 const LevelUpModal: React.FC = () => {
   const { level, closeLevelUpModal } = useContext(challengesContext);
 
   return (
-    <div className={styles.overlay}>
-      <div className={styles.container}>
+    <Overlay>
+      <Container>
         <header>{level}</header>
 
         <strong>Parabéns</strong>
@@ -18,8 +18,8 @@ const LevelUpModal: React.FC = () => {
         <button type="button" onClick={closeLevelUpModal}>
           <img src="/icons/close.svg" alt="Fechar modal" />
         </button>
-      </div>
-    </div>
+      </Container>
+    </Overlay>
   );
 }
 
