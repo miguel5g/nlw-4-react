@@ -10,7 +10,7 @@ const CompletedChallenges: React.FC = () => {
   return (
     <div className={styles.completedChallengesContainer}>
       <span>Desafios completos</span>
-      <span>{challengesCompleted}</span>
+      <span>{challengesCompleted || 0}</span>
     </div>
   );
 }

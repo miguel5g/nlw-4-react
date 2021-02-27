@@ -24,13 +24,13 @@
 .countdownContainer > div span:first-child {
   flex: 1;
 
-  border-right: solid 1px #f0f1f3;
+  border-right: solid 1px var(--gray-line);
 }
 
 .countdownContainer > div span:last-child {
   flex: 1;
 
-  border-left: solid 1px #f0f1f3;
+  border-left: solid 1px var(--gray-line);
 }
 
 .countdownContainer > span {

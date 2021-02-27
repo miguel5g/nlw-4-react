@@ -5,7 +5,7 @@
 
   margin: 1.7rem 0 2.7rem;
   padding-bottom: 1rem;
-  border-bottom: solid 1px #d7d8da;
+  border-bottom: solid 1px var(--gray-line);
 
   font-weight: 500;
 }
