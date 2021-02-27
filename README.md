@@ -43,8 +43,11 @@ Algumas coisas que quero implementar ou alterar para dar um up no projeto.
 - [ ] Migrar a estilização de module.css para Styled Components.
 - [ ] Migrar página index para home.
 - [ ] Criar uma página de login com possibilidade de login por username ou github.
+- [ ] Adicionar responsividade.
 - [ ] Aplicar o layout 2.0 do moev.it.
 - [ ] Adicionar página de rank de usuários.
+- [ ] Adicionar Possibilidade de escolher o tempo do countdown.
+- [ ] Adicionar tema dark.
 - [ ] Adicionar página de perfil do usuário.
 - [ ] Desenvolver PWA para o projeto.
 
