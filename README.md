@@ -50,6 +50,7 @@ Algumas coisas que quero implementar ou alterar para dar um up no projeto.
 - [ ] Adicionar tema dark.
 - [ ] Adicionar página de perfil do usuário.
 - [ ] Desenvolver PWA para o projeto.
+- [ ] Adicionar compartilhar no Twitter.
 
 ## 🔖 Layout
 

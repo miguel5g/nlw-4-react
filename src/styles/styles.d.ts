@@ -15,7 +15,9 @@ declare module 'styled-components' {
       green: string;
       blue: string;
       blueDark: string;
+      blueLight: string;
       blueTwitter: string;
+      grayGithub: string;
     }
   }
 }

@@ -14,7 +14,9 @@ const theme: DefaultTheme = {
     green: '#4CD62B',
     blue: '#5965E0',
     blueDark: '#4953B8',
+    blueLight: '#F5FCFF',
     blueTwitter: '#2AA9E0',
+    grayGithub: '#444444',
   }
 };
 

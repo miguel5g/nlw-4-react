@@ -19,7 +19,6 @@ export const Container = styled.div`
 
   width: 100%;
   max-width: 400px;
-  padding: 2rem 3rem;
 
   background: ${({ theme }) => theme.colors.white};
   border-radius: 5px;
@@ -27,7 +26,11 @@ export const Container = styled.div`
 
   text-align: center;
 
-  & header {
+  & > div {
+    padding: 2rem 3rem;
+  }
+
+  & div header {
     background: url('/icons/levelup.svg') no-repeat center;
     background-size: contain;
 
@@ -36,19 +39,19 @@ export const Container = styled.div`
     font-weight: 600;
   }
 
-  & strong {
+  & div strong {
     color: ${({ theme }) => theme.colors.title};
     font-size: 2.25rem;
   }
 
-  & p {
+  & div p {
     font-size: 1.25rem;
     
     color: ${({ theme }) => theme.colors.text};
     margin-top: 0.25rem;
   }
 
-  & button {
+  & div button {
     position: absolute;
 
     right: 0.5rem;
@@ -58,5 +61,34 @@ export const Container = styled.div`
     border: none;
 
     font-size: 0;
+  }
+`;
+
+export const ShareButton = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 80px;
+
+  background: ${({ theme }) => theme.colors.blueLight};
+  border-radius: 0px 0px 5px 5px;
+  border: none;
+  border-top: solid 1px ${({ theme }) => theme.colors.grayLine};
+
+  color: ${({ theme }) => theme.colors.blueTwitter};
+  font-size: 1.25rem;
+  font-weight: 600;
+
+  transition: 0.2s;
+
+  & > svg {
+    margin-left: 14px;
+  }
+
+  &:hover {
+    background: ${({ theme }) => theme.colors.blueTwitter};
+    color: ${({ theme }) => theme.colors.white};
   }
 `;
