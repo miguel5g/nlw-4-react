@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
 import { FaTwitter } from 'react-icons/fa';
 
-import { challengesContext } from '../../contexts/ChallengesContext';
+import { ChallengesContext } from '../../contexts/ChallengesContext';
 
 import { Container, Overlay, ShareButton } from './styles';
 
 const LevelUpModal: React.FC = () => {
-  const { level, closeLevelUpModal } = useContext(challengesContext);
+  const { level, closeLevelUpModal } = useContext(ChallengesContext);
 
   return (
     <Overlay>

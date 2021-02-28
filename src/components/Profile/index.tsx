@@ -1,17 +1,19 @@
 import React, { useContext } from 'react';
 
-import { challengesContext } from '../../contexts/ChallengesContext';
+import { ChallengesContext } from '../../contexts/ChallengesContext';
+import { UserContext } from '../../contexts/UserContext';
 
 import { Container } from './styles';
 
 const Profile: React.FC = () => {
-  const { level } = useContext(challengesContext);
+  const { level } = useContext(ChallengesContext);
+  const { name, avatarUrl } = useContext(UserContext);
 
   return (
     <Container>
-      <img src="https://github.com/miguel5g.png" alt="Miguel Ângelo" />
+      <img src={avatarUrl} alt="Miguel Ângelo" />
       <div>
-        <strong>Miguel Ângelo</strong>
+        <strong>{name}</strong>
         <p>
           <img src="icons/level.svg" alt="Level" />
           Level {level}

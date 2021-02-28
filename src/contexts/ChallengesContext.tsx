@@ -30,7 +30,7 @@ interface ChallengesContextData {
   closeLevelUpModal: () => void;
 }
 
-export const challengesContext = createContext({} as ChallengesContextData);
+export const ChallengesContext = createContext({} as ChallengesContextData);
 
 export function ChallengesProvider({ children, ...rest }: ChallengesProviderProps) {
   const [level, setLevel] = useState(rest.level ?? 1);
@@ -98,7 +98,7 @@ export function ChallengesProvider({ children, ...rest }: ChallengesProviderProp
   }
 
   return (
-    <challengesContext.Provider value={{
+    <ChallengesContext.Provider value={{
       level,
       levelUp,
       currentExperience,
@@ -113,6 +113,6 @@ export function ChallengesProvider({ children, ...rest }: ChallengesProviderProp
       {children}
       
       {isLevelUpModalOpen && <LevelUpModal />}
-    </challengesContext.Provider>
+    </ChallengesContext.Provider>
   )
 }

@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 
-import { challengesContext } from '../../contexts/ChallengesContext';
+import { ChallengesContext } from '../../contexts/ChallengesContext';
 
 import { Container } from './styles';
 
 const ExperienceBar: React.FC = () => {
-  const { currentExperience, experienceToNextLevel } = useContext(challengesContext);
+  const { currentExperience, experienceToNextLevel } = useContext(ChallengesContext);
 
   const percentToNextLevel = Math.round(currentExperience * 100) / experienceToNextLevel;
 

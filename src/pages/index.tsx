@@ -1,65 +1,74 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { FaGithub } from 'react-icons/fa';
+import { FiArrowRight } from 'react-icons/fi';
+import { useRouter } from 'next/router';
 import Head from 'next/head';
-import { GetServerSideProps } from 'next';
 
-import { CountdownProvider } from '../contexts/CountdownContext';
-import { ChallengesProvider } from '../contexts/ChallengesContext';
-import CompletedChallenges from '../components/CompletedChallenges';
-import Countdown from '../components/Countdown';
-import ExperienceBar from '../components/ExperienceBar';
-import Profile from '../components/Profile';
-import ChallengeBox from '../components/ChallengeBox';
+import { Button, Container, GithubButton, Input } from '../styles/pages/Index';
+import { UserContext } from '../contexts/UserContext';
 
-import { Container } from '../styles/pages/Index';
+const Index: React.FC = () => {
+  const [name, setName] = useState('');
+  const { name: userName, handleChangeName } = useContext(UserContext);
 
-interface HomeProps {
-  level: number;
-  currentExperience: number;
-  challengesCompleted: number;
-}
+  const router = useRouter();
 
-const Home: React.FC<HomeProps> = (props) => {
+  function handleLoginWithName() {
+    if (name.length < 4) return;
+
+    handleChangeName(name);
+    router.push('/home');
+  }
+
+  useEffect(() => {
+    if (userName !== '') {
+      router.push('/home');
+    }
+  }, [userName]);
+
   return (
-    <ChallengesProvider
-      level={props.level}
-      currentExperience={props.currentExperience}
-      challengesCompleted={props.challengesCompleted}
-    >
+    <>
+      <Head>
+        <title>Moevit - Home</title>
+      </Head>
+
       <Container>
-        <Head>
-          <title>Início | gopep</title>
-        </Head>
+        <div>
+          <img src="/logo-full-light.svg" alt="Moevit" />
 
-        <ExperienceBar />
+          <strong>Bem-vindo</strong>
 
-        <CountdownProvider>
-          <section>
-            <div>
-              <Profile />
-              <CompletedChallenges />
-              <Countdown />
-            </div>
+          <span>
+            Digite seu nome ou faça login para começar
+        </span>
 
-            <div>
-              <ChallengeBox />
-            </div>
-          </section>
-        </CountdownProvider>
+          <div>
+            <section>
+              <Input
+                placeholder="Digite seu nome"
+                onChange={(e) => setName(e.target.value)}
+              />
+              <Button
+                onClick={handleLoginWithName}
+                active={name.length >= 4}
+              >
+                <FiArrowRight />
+              </Button>
+            </section>
+
+            <span>Ou</span>
+
+            <section>
+              <GithubButton disabled>
+                <FaGithub />
+              Github
+            </GithubButton>
+            </section>
+          </div>
+        </div>
       </Container>
-    </ChallengesProvider>
+    </>
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const { level, currentExperience, challengesCompleted } = ctx.req.cookies;
-
-  return {
-    props: {
-      level: Number(level),
-      currentExperience: Number(currentExperience),
-      challengesCompleted: Number(challengesCompleted),
-    }
-  }
-}
-
-export default Home;
+export default Index;
